@@ -1,0 +1,23 @@
+.list-item-color {
+  color: #a6a6a6;
+}
+
+.list-group li {
+  font-size: 1.1rem;
+}
+
+.ok {
+  position: absolute;
+  top: 5vh;
+  right: 4vw;
+}
+
+.ok::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #00ff10;
+}

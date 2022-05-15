@@ -1,0 +1,67 @@
+<div class="contenedor">
+  <h1 class="text-secondary title-main mb-5">Ver Pacientes</h1>
+  <div class="d-flex mb-5">
+    <input
+      class="form-control w-75"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      #input
+    />
+    <button
+      class="btn btn-secondary w-25"
+      type="button"
+      (click)="searchPacientes(input)"
+    >
+      Search
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-6 mb-3" *ngFor="let paciente of pacientes">
+      <div class="card">
+        <div class="card-header text-light text-center">
+          {{ paciente.nombre }} {{ paciente.apellidos }}
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-6">
+              <button
+                class="btn btn-outline-success w-100"
+                [routerLink]="['/ver-paciente/', paciente.idPaciente]"
+              >
+                Ver Paciente
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                class="btn btn-outline-warning w-100"
+                [routerLink]="['/actualizar-paciente/', paciente.idPaciente]"
+              >
+                Actualizar Paciente
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <button
+                class="btn btn-outline-danger w-100"
+                (click)="eliminarPaciente(paciente.idPaciente + '')"
+              >
+                Eliminar paciente
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                class="btn btn-outline-info w-100"
+                [routerLink]="['/ver-citas/', paciente.idPaciente]"
+              >
+                Ver Citas
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

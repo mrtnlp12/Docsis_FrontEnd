@@ -1,0 +1,83 @@
+<div class="contenedor">
+  <h1 class="text-secondary title-main text-center">
+    {{ paciente.nombre }} {{ paciente.apellidos }}
+  </h1>
+  <hr />
+  <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-outline-danger" routerLink="/ver-pacientes">
+      Volver atras 🔙
+    </button>
+  </div>
+
+  <form>
+    <p class="text-light font-weight-bolder">Datos personales</p>
+    <div class="row mb-3">
+      <div class="col">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          name="nombre"
+          class="form-control"
+          placeholder="Nombre del paciente..."
+          [(ngModel)]="paciente.nombre"
+        />
+      </div>
+      <div class="col">
+        <label for="apellidos">Apellidos:</label>
+        <input
+          type="text"
+          name="apellidos"
+          class="form-control"
+          placeholder="Apellidos del paciente..."
+          [(ngModel)]="paciente.apellidos"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <label for="edad">Edad:</label>
+        <input
+          type="number"
+          name="edad"
+          class="form-control"
+          placeholder="Edad del paciente..."
+          [(ngModel)]="paciente.edad"
+        />
+      </div>
+      <div class="col">
+        <label for="correo">Correo:</label>
+        <input
+          type="email"
+          name="correo"
+          class="form-control"
+          placeholder="Correo del paciente..."
+          [(ngModel)]="paciente.correo"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="telefono">Telefono:</label>
+        <input
+          type="tel"
+          name="telefono"
+          class="form-control"
+          placeholder="Telefono del paciente..."
+          [(ngModel)]="paciente.telefono"
+        />
+      </div>
+    </div>
+    <div class="div text-center">
+      <button
+        class="text-light btn btn-warning w-50 mt-5"
+        (click)="actualizarPaciente()"
+      >
+        Actualizar
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="alert alert-success ok" role="alert">
+  Paciente actualizado correctamente!
+</div>

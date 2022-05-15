@@ -1,0 +1,49 @@
+<div class="contenedor">
+  <h1 class="text-secondary title-main text-center">
+    {{ paciente.nombre }} {{ paciente.apellidos }}
+  </h1>
+  <hr />
+  <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-outline-danger" routerLink="/ver-pacientes">
+      Volver atras 🔙
+    </button>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <span class="font-weight-bolder font-size-1">Edad:</span>
+      <span class="ml-2 font-weight-bolder text-light font-size-1">{{
+        paciente.edad
+      }}</span>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <span class="font-weight-bolder font-size-1">Correo:</span>
+      <span class="ml-2 font-weight-bolder text-light font-size-1">{{
+        paciente.correo
+      }}</span>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <span class="font-weight-bolder font-size-1">Telefono:</span>
+      <span class="ml-2 font-weight-bolder text-light font-size-1">{{
+        paciente.telefono
+      }}</span>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <span class="font-weight-bolder font-size-1">Fecha de registro:</span>
+      <span class="ml-2 font-weight-bolder text-light font-size-1">{{
+        paciente.createdAt | date
+      }}</span>
+    </div>
+  </div>
+  <button
+    class="btn btn-success text-light w-25"
+    [routerLink]="['/nueva-cita/', id]"
+  >
+    Nueva cita
+  </button>
+</div>

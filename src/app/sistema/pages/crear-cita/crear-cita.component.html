@@ -1,0 +1,93 @@
+<main>
+  <div class="contenedor">
+    <h1 class="text-secondary title-main mb-5">Crear Cita</h1>
+    <form #form>
+      <div class="mb-5">
+        <p class="text-light font-weight-bolder">Datos personales</p>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              name="nombre"
+              class="form-control"
+              placeholder="Nombre del paciente..."
+              [(ngModel)]="cita.nombre"
+            />
+          </div>
+          <div class="col">
+            <label for="apellidos">Apellidos:</label>
+            <input
+              type="text"
+              name="apellidos"
+              class="form-control"
+              placeholder="Apellidos del paciente..."
+              [(ngModel)]="cita.apellidos"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="edad">Edad:</label>
+            <input
+              type="number"
+              name="edad"
+              class="form-control"
+              placeholder="Edad del paciente..."
+              [(ngModel)]="cita.edad"
+              a
+            />
+          </div>
+          <div class="col">
+            <label for="correo">Correo:</label>
+            <input
+              type="email"
+              name="correo"
+              class="form-control"
+              placeholder="Correo del paciente..."
+              [(ngModel)]="cita.correo"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6">
+            <label for="telefono">Telefono:</label>
+            <input
+              type="tel"
+              name="telefono"
+              class="form-control"
+              placeholder="Telefono del paciente..."
+              [(ngModel)]="cita.telefono"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="text-light font-weight-bolder">Datos Medicos</p>
+        <div class="row">
+          <div class="col">
+            <label for="sintomas">Sintomas:</label>
+            <textarea
+              name="sintomas"
+              class="w-100"
+              rows="5"
+              [(ngModel)]="cita.sintomas"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mb-2">
+        <button
+          type="button"
+          class="btn btn-success w-75 font-weight-bolder"
+          (click)="crearCita(form)"
+        >
+          Crear
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="alert alert-success ok" *ngIf="success" role="alert">
+    Cita creada correctamente!
+  </div>
+</main>

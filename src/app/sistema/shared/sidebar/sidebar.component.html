@@ -1,0 +1,23 @@
+<nav class="bg-primary sidebar p-2">
+  <h1 class="text-center text-light py-2 border-bottom border-secondary">
+    DocSis
+  </h1>
+
+  <ul class="list-group">
+    <li
+      class="font-weight-bolder py-3 px-2 hover list-item-color"
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="focus"
+    >
+      Crear Cita
+    </li>
+    <li
+      class="font-weight-bolder py-3 px-2 hover"
+      routerLink="/ver-pacientes"
+      routerLinkActive="focus"
+    >
+      Ver pacientes
+    </li>
+  </ul>
+</nav>

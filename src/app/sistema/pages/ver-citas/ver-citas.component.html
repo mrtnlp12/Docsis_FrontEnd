@@ -1,0 +1,24 @@
+<div class="contenedor">
+  <h1 class="text-secondary title-main text-center">
+    Citas de: {{ nombreFull }}
+  </h1>
+  <hr />
+  <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-outline-danger" routerLink="/ver-pacientes">
+      Volver atras 🔙
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-6 mb-4" *ngFor="let cita of citas">
+      <div class="card">
+        <div class="card-header text-light font-weight-bolder text-center">
+          Fecha: {{ cita.createdAt | date }}
+        </div>
+        <div class="card-body">
+          {{ cita.sintomas }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

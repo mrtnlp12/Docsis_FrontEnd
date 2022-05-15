@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.contenedor {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.title-main {
+  font-size: 4rem;
+}
+.title-desc {
+  font-size: 1.6rem;
+}
+hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}

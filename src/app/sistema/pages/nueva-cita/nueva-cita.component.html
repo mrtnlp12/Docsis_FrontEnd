@@ -1,0 +1,29 @@
+<div class="contenedor">
+  <h1 class="text-secondary title-main">Nueva Cita</h1>
+  <h3 class="text-light title-desc font-weight-light">{{ nombreFull }}</h3>
+  <div class="d-flex justify-content-end mb-4">
+    <button
+      class="btn btn-outline-danger"
+      [routerLink]="['/ver-paciente/', id]"
+    >
+      Volver atras 🔙
+    </button>
+  </div>
+  <form #form>
+    <p class="text-light font-weight-bolder">Datos medicos</p>
+    <div class="mt-5">
+      <label for="sintomas">Sintomas</label>
+      <textarea
+        name="sintomas"
+        class="w-100"
+        rows="6"
+        [(ngModel)]="sintomas.sintomas"
+      ></textarea>
+    </div>
+    <div class="mt-5 text-center">
+      <button class="btn btn-success w-50" (click)="agregarCita(form)">
+        Agregar cita
+      </button>
+    </div>
+  </form>
+</div>
